@@ -1,6 +1,6 @@
 
 
-   function suma() {
+let suma = ()=> {
      let x, y, suma, text;
      x = document.getElementById("num1").value;
      y = document.getElementById("num2").value;
@@ -11,9 +11,9 @@
        text = suma;
      }
      document.getElementById("suma").innerHTML = text;
-   } 
+   } ;
    
-   function resta() {
+   let resta = ()=> {
      let x, y, resta, text;
      x = document.getElementById("num1").value;
      y = document.getElementById("num2").value;
@@ -24,9 +24,9 @@
        text = resta;
      }
      document.getElementById("resta").innerHTML = text;
-   } 
+   }; 
 
-   function mult() {
+   let mult = ()=> {
      let x, y, multiplicacion, text;
      x = document.getElementById("num1").value;
      y = document.getElementById("num2").value;
@@ -38,7 +38,7 @@
      }
      document.getElementById("multiplicacion").innerHTML = text;
    } 
-   function div() {
+   let div = ()=> {
      let x, y, division, text;
      x = document.getElementById("num1").value;
      y = document.getElementById("num2").value;
@@ -49,4 +49,4 @@
        text = division;
      }
      document.getElementById("division").innerHTML = text;
-   } 
+   }
