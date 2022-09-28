@@ -1,75 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- CSS de bootstrap -->
-    <link rel="stylesheet" href="./css/bootstrap.min.css" />
-    <!-- CSS font awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
-    <!-- CSS personalizado
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- CSS de bootstrap -->
+  <link rel="stylesheet" href="./css/bootstrap.min.css" />
+  <!-- CSS font awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+  <!-- CSS personalizado
     <link rel="stylesheet" href="style.css" /> -->
 
-    <title>Calculator</title>
+  <title>Calculator</title>
 </head>
+
 <body>
+
+<div class="container my-6">
+  <div class="container" id="title">
+      <h1 class="text-center">The basic calculator</h1>
+      <h2></h2>
+      <p class="text-center">SUMA | RESTA | MULTIPLICACIÓN | DIVISIÓN</p>
     
-<div class="container my-4">
-    <div class="container" id="title">
-        <h1 class="text-center">The basic calculator</h1>
-      </div>
-      <div class="container" id="calcs-section">
-        <div class="row">
-          <input id="print" class="col-xs-12 text-right calcs" type="text" name="input" size="16">
+
+      <div class="row">
+        <div class="group col-md-6">
+          <input id="num1" class="form-control" placeholder="Primer número">
+        </div>
+        <div class="group col-md-6">
+          <input id="num2" class="form-control" placeholder="Segundo Número">
         </div>
       </div>
+  
 
-<div class="row">
-    <div class="btn-group me-2" role="group" aria-label="First group">
-    <button type="button" class="btn btn-primary">1</button>
-    <button type="button" class="btn btn-primary">2</button>
-    <button type="button" class="btn btn-primary">3</button>
-    <button type="button" class="btn btn-primary" >+</button>
-  </div>
+
+      <div class="row my-4">
+        <div class="col-md-3">
+        <button type="button" class="btn btn-primary" onclick="suma()">Sumar</button>
+        <p id="suma"></p></div>
+        <div class="col-md-3">
+        <button type="button" class="btn btn-primary" onclick="resta()">Restar</button>
+        <p id="resta"></p></div>
+        <div class="col-md-3">
+        <button type="button" class="btn btn-primary" onclick="mult()">Multiplicar</button>
+        <p id="multiplicacion"></p></div>
+        <div class="col-md-3">
+        <button type="button" class="btn btn-primary" onclick="div()">Dividir</button>
+        <p id="division"></p></div>
+      </div>
+
+   <script>
+    function suma() {
+      let x, y, suma, text;
+      x = document.getElementById("num1").value;
+      y = document.getElementById("num2").value;
+      if (isNaN(x) || isNaN(y)) {
+        text = "Introduzca un numero válido";
+      } else {
+        suma = parseFloat(x) + parseFloat(y);
+        text = suma;
+      }
+      document.getElementById("suma").innerHTML = text;
+    } 
+    
+    function resta() {
+      let x, y, resta, text;
+      x = document.getElementById("num1").value;
+      y = document.getElementById("num2").value;
+      if (isNaN(x) || isNaN(y)) {
+        text = "Introduzca un numero válido";
+      } else { 
+        resta  = parseFloat(x) - parseFloat(y);
+        text = resta;
+      }
+      document.getElementById("resta").innerHTML = text;
+    } 
+
+    function mult() {
+      let x, y, multiplicacion, text;
+      x = document.getElementById("num1").value;
+      y = document.getElementById("num2").value;
+      if (isNaN(x) || isNaN(y)) {
+        text = "Introduzca un numero válido";
+      } else {
+       multiplicacion  = parseFloat(x) * parseFloat(y);
+        text = multiplicacion;
+      }
+      document.getElementById("multiplicacion").innerHTML = text;
+    } 
+    function div() {
+      let x, y, division, text;
+      x = document.getElementById("num1").value;
+      y = document.getElementById("num2").value;
+      if (isNaN(x) || isNaN(y)) {
+        text = "Introduzca un numero válido";
+      } else {
+       division  = parseFloat(x) / parseFloat(y);
+        text = division;
+      }
+      document.getElementById("division").innerHTML = text;
+    } 
+   </script>
+
 </div>
 
-<div class="row">
-    <div class="btn-group me-2" role="group" aria-label="First group">
-    <button type="button" class="btn btn-primary">4</button>
-    <button type="button" class="btn btn-primary">5</button>
-    <button type="button" class="btn btn-primary">6</button>
-    <button type="button" class="btn btn-primary">-</button>
-  </div>
-</div>
+  <!-- JS de bootstrap -->
+  <script src="./js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
 
-<div class="row">
-    <div class="btn-group me-2" role="group" aria-label="First group">
-    <button type="button" class="btn btn-primary">7</button>
-    <button type="button" class="btn btn-primary">8</button>
-    <button type="button" class="btn btn-primary">9</button>
-    <button type="button" class="btn btn-primary">+</button>
-  </div>
-</div>
-
-<div class="row">
-    <div class="btn-group me-2" role="group" aria-label="First group">
-    <button type="button" class="btn btn-primary">0</button>
-    <button type="button" class="btn btn-primary">C</button>
-    <button type="button" class="btn btn-primary">=</button>
-    <button type="button" class="btn btn-primary">/</button>
-  </div>
-</div>
-</div>
-
-
-
-        <!-- JS de bootstrap -->
-        <script src="./js/bootstrap.bundle.min.js"></script>
-        <script src="script.js"></script>
-
-        <script src="./"></script>
-        <script src="script.js"></script>
+  <script src="./"></script>
+  <script src="script.js"></script>
 </body>
-</body>
+
 </html>
